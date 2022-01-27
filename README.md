@@ -37,15 +37,19 @@ The above code should create a little popup box that asks the user for a number.
 
 With that done, let’s move on to the next subproblem: “Loop from 1 to the entered number”. There are many ways to do this in JavaScript. One of the common ways - that you actually see in many other languages like Java, C++, and Ruby - is with the for-loop:
 
+```
 let answer = parseInt(prompt("Please enter the number you would like to FizzBuzz up to: "));
 
 for (let i = 1; i <= answer; i++) {
   console.log(i);
 }
+```
+
 If you haven’t seen this before and it looks strange, it’s actually straightforward. We declare a variable i and assign it 1: the initial value of the variable i in our loop (NOTE: Most of the time, programmers find themselves looping from 0. Due to the needs of our program, we’re starting from 1). The second clause, i <= answer is our condition. We want to loop until i is greater than answer. The third clause, i++, tells our loop to increment i by 1 every iteration. As a result, if the user inputs 10, this loop would print numbers 1 - 10 to the console.
 
 With that working, let’s move on to the next problem: If the current number is divisible by 3, then print Fizz.
 
+```
 let answer = parseInt(prompt("Please enter the number you would like to FizzBuzz up to: "));
 
 for (let i = 1; i <= answer; i++) {
@@ -55,6 +59,8 @@ for (let i = 1; i <= answer; i++) {
     console.log(i);
   }
 }
+```
+
 We are using the modulus operator (%) here to divide the current number by three. If you recall from a previous lesson, the modulus operator returns the remainder of a division. So if a remainder of 0 is returned from the division, it means the current number is divisible by 3.
 
 After this change the program will now output this when you run it and the user inputs 10:
@@ -69,8 +75,10 @@ Fizz
 8
 Fizz
 10
+
 The program is starting to take shape. The final few subproblems should be easy to solve as the basic structure is in place and they are just different variations of the condition we’ve already got in place. Let’s tackle the next one: If the current number is divisible by 5 then print Buzz.
 
+```
 let answer = parseInt(prompt("Please enter the number you would like to FizzBuzz up to: "));
 
 for (let i = 1; i <= answer; i++) {
@@ -82,6 +90,8 @@ for (let i = 1; i <= answer; i++) {
     console.log(i);
   }
 }
+```
+
 When you run the program now, you should see this output if the user inputs 10:
 
 1
@@ -94,8 +104,10 @@ Fizz
 8
 Fizz
 Buzz
+
 We have one more subproblem to solve to complete the program: If the current number is divisible by 3 and 5 then print FizzBuzz.
 
+```
 let answer = parseInt(prompt("Please enter the number you would like to FizzBuzz up to: "));
 
 for (let i = 1; i <= answer; i++) {
@@ -109,6 +121,8 @@ for (let i = 1; i <= answer; i++) {
     console.log(i);
   }
 }
+```
+
 We’ve had to move the conditionals around a little to get it to work. The first condition now checks if i is divisible by 3 and 5 instead of checking if i is just divisible by 3. We’ve had to do this because if we kept it the way it was, it would run the first condition if (i % 3 === 0), so that if i was divisible by 3, it would print Fizz and then move on to the next number in the iteration, even if i was divisible by 5 as well.
 
 With the condition if (i % 3 === 0 && i % 5 === 0) coming first, we check that i is divisible by both 3 and 5 before moving on to check if it is divisible by 3 or 5 individually in the else if conditions.
